@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 
-#include "days/days.h"
+#include "days/days.hpp"
 
 using namespace std;
 
@@ -30,7 +30,7 @@ int main() {
         else
             cout << "Ops! " << day << " day not found" << endl;
 
-        cout << endl << endl;
+        cout << "\n-------------------------------------------\n\n";
     }
 
     return 0;

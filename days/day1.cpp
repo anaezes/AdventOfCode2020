@@ -1,19 +1,15 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
+#include "days.hpp"
 
-#include "days.h"
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
 void day1()
 {
-    cout << "Day One \n";
+    std::cout << "Day 1 \n";
 
-    std::ifstream file_in("days/input/day1.txt");
-    if (!file_in) {
-        cout << "Error! File input not found!" << endl;
-    }
+    std::ifstream file_in = utils::getFile("days/input/day1.txt");
 
     std::vector<int> data;
     std::string line;
@@ -23,9 +19,25 @@ void day1()
     for(auto val1: data) {
         for(auto val2: data) {
             if(val1 + val2 == 2020) {
-                cout << val1 << " * " << val2 << " = "<< val1 * val2 << endl;
+                std::cout << "Part One - " << val1 << " * " << val2 << " = "<< val1 * val2 << std::endl;
+                goto next;
             }
         }
     }
+
+    next:
+
+    for(auto val1: data) {
+        for(auto val2: data) {
+            for(auto val3: data) {
+                if (val1 + val2 + val3 == 2020) {
+                    std::cout << "Part Two - " << val1 << " * " << val2 << " * " << val3 << " = " << val1 * val2 * val3 << std::endl;
+                    goto finish;
+                }
+            }
+        }
+    }
+
+    finish: return;
 }
 
