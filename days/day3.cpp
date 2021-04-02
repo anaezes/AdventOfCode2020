@@ -4,33 +4,44 @@
 
 using namespace std;
 
+unsigned int countTrees(vector<string> map, unsigned int incrementY, unsigned int incrementX)
+{
+    int down_coordinate = 0;
+    int right_coordinate = 0;
+    int tree_counter = 0;
+
+    int xLength = (map.at(0)).length();
+    while (down_coordinate < map.size() - 1 )
+    {
+        right_coordinate += incrementX;
+        down_coordinate += incrementY;
+
+        if (map.at(down_coordinate)[right_coordinate % xLength] == '#')
+            tree_counter++;
+    }
+
+    return tree_counter;
+}
+
 void day3()
 {
     std::cout << "Day 3 \n";
 
     std::ifstream file_in = utils::getFile("days/input/day3.txt");
 
-    std::vector<string> data;
-    std::string line;
+    vector<string> data;
+    string line;
     while (std::getline(file_in, line))
         data.push_back(line);
 
-    int down_coordinate = 0;
-    int right_coordinate = 0;
-    int tree_counter = 0;
+    unsigned total = countTrees(data, 1, 3);
+    std::cout << "Part One - " << total << std::endl;
 
-    int xLength = (data.at(0)).length();
-    while (down_coordinate < data.size() - 1 )
-    {
-        right_coordinate += 3;
-        down_coordinate += 1;
-
-        int map_x = right_coordinate % xLength;
-        if (data.at(down_coordinate)[map_x] == '#')
-            tree_counter++;
-    }
-
-    std::cout << "Part One - " << tree_counter << std::endl;
+    total *= countTrees(data, 1, 1);
+    total *= countTrees(data, 1, 5);
+    total *= countTrees(data, 1, 7);
+    total *= countTrees(data, 2, 1);
+    std::cout << "Part Two - " << total << std::endl;
 }
 
 
