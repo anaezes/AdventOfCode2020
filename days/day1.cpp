@@ -9,7 +9,7 @@ void day1()
 {
     std::cout << "Day 1 \n";
 
-    std::ifstream file_in = utils::getFile("days/input/day1.txt");
+    std::ifstream file_in = utils::getFile("days/inputs/day1.txt");
 
     std::vector<int> data;
     std::string line;

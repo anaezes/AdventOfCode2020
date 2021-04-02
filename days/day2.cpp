@@ -11,7 +11,7 @@ void day2()
 {
     std::cout << "Day 2 \n";
 
-    std::ifstream file_in = utils::getFile("days/input/day2.txt");
+    std::ifstream file_in = utils::getFile("days/inputs/day2.txt");
 
     std::vector<std::string> data;
     string line;

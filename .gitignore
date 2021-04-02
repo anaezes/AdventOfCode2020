@@ -135,6 +135,9 @@ fabric.properties
 # Executables
 *.exe
 *.out
+
+# script
+script.sh
 *.app
 
 

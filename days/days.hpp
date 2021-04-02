@@ -2,10 +2,11 @@
 #ifndef UNTITLED_DAYS_HPP
 #define UNTITLED_DAYS_HPP
 
-#include "utils.hpp"
+#include "utils/utils.hpp"
 
 void day1();
 void day2();
 void day3();
+void day4();
 
 #endif //UNTITLED_DAYS_HPP

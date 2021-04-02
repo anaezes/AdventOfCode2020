@@ -9,7 +9,8 @@ typedef std::map<uint32_t, void(*)()> function;
 function calender = {
         {1, &day1 },
         {2, &day2 },
-        {3, &day3 }
+        {3, &day3 },
+        {4, &day4 }
 };
 
 int main() {
