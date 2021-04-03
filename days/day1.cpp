@@ -9,12 +9,7 @@ void day1()
 {
     std::cout << "Day 1 \n";
 
-    std::ifstream file_in = utils::getFile("days/inputs/day1.txt");
-
-    std::vector<int> data;
-    std::string line;
-    while (std::getline(file_in, line))
-        data.push_back(stoi(line));
+    std::vector<int> data = utils::getVecDataInt("days/inputs/day1.txt");
 
     for(auto val1: data) {
         for(auto val2: data) {

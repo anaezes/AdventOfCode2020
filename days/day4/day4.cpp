@@ -56,7 +56,7 @@ void day4() {
     }
 
     std::cout << "Part One - " << validPassportsCount1 << std::endl;
-    std::cout << "Part TWO - " << validPassportsCount2 << std::endl;
+    std::cout << "Part Two - " << validPassportsCount2 << std::endl;
 }
 
 std::vector<string> getPassports() {

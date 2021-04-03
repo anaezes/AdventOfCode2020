@@ -10,12 +10,7 @@ void day3()
 {
     std::cout << "Day 3 \n";
 
-    std::ifstream file_in = utils::getFile("days/inputs/day3.txt");
-
-    vector<string> data;
-    string line;
-    while (std::getline(file_in, line))
-        data.push_back(line);
+    std::vector<std::string> data = utils::getVecDataStr("days/inputs/day3.txt");
 
     unsigned total = countTrees(data, 1, 3);
     std::cout << "Part One - " << total << std::endl;

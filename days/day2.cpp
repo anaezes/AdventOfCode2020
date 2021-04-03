@@ -13,8 +13,8 @@ void day2()
 
     std::ifstream file_in = utils::getFile("days/inputs/day2.txt");
 
-    std::vector<std::string> data;
     string line;
+    std::vector<std::string> data;
     const std::regex expression("(\\d*)-(\\d*) ([a-z]): (\\w*)");
     while (std::getline(file_in, line)) {
         std::smatch result;

@@ -13,19 +13,16 @@ const int ID_FACTOR = 8;
 
 int getSeat(const std::string &str, char first, char second, int max,  int size);
 
+int getIdMySeat(int id, int id1, std::vector<int> vector);
+
 void day5() {
     std::cout << "Day 5 \n";
 
-    std::ifstream file_in = utils::getFile("days/inputs/day5.txt");
-
-    std::vector<std::string> boardingPasses;
-    std::string line;
-    while (std::getline(file_in, line))
-        boardingPasses.push_back(line);
+    std::vector<std::string> boardingPasses = utils::getVecDataStr("days/inputs/day5.txt");
 
     std::vector<int> idsSeats;
     int maxID = 0;
-    int minID = 1000;
+    int minID = INT32_MAX;
     for(auto bp: boardingPasses) {
         std::string rowStr = bp.substr(0, 7);
         std::string colStr = bp.substr(7, bp.size());
@@ -39,16 +36,18 @@ void day5() {
         if(id > maxID) maxID = id;
     }
 
-    std::cout << "Part One - " << maxID << std::endl;
+    std::cout << "Part One - max Id: " << maxID << std::endl;
+    std::cout << "Part Two - my seat: " <<  getIdMySeat(minID, maxID, idsSeats) << std::endl;
+}
 
+int getIdMySeat(int minID, int maxID, std::vector<int> idsSeats) {
     for (int i = minID + 1; i < maxID; i++)
     {
         auto it = std::find(idsSeats.begin(), idsSeats.end(), i);
-        if (it == idsSeats.end()) {
-            std::cout << "Part Two - " << i << std::endl;
-            break;
-        }
+        if (it == idsSeats.end())
+            return i;
     }
+    return 0;
 }
 
 int getSeat(const std::string &str, char first, char second, int max,  int size) {
