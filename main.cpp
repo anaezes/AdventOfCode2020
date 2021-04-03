@@ -10,11 +10,11 @@ function calender = {
         {1, &day1 },
         {2, &day2 },
         {3, &day3 },
-        {4, &day4 }
+        {4, &day4 },
+        {5, &day5 }
 };
 
 int main() {
-    cout << "Hello, World!" << endl;
     cout << "Welcome to Advent of code 2020!" << endl;
 
     while (true)
