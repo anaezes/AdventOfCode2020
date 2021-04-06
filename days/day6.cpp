@@ -19,20 +19,20 @@ void day6() {
         std::vector<std::pair<char, int>> answer2;
         int nGroup = 1;
 
-        for(int i = 0; i < line.size(); i++) {
-            answer1.insert(line[i]);
-            answer2.push_back({line[i], 1});
+        for(auto c1 : line) {
+            answer1.insert(c1);
+            answer2.push_back({c1, 1});
         }
         while (std::getline(file_in, line)) {
             if(line.empty() || line[0] == '\n'){
                 break;
             }
             nGroup++;
-            for(int i = 0; i < line.size(); i++) {
-                answer1.insert(line[i]);
-                for(int j = 0; j < answer2.size(); j++) {
-                    if(answer2.at(j).first == line[i])
-                        answer2.at(j).second++;
+            for(auto c2 : line) {
+                answer1.insert(c2);
+                for(auto& a: answer2) {
+                    if(a.first == c2)
+                        a.second++;
                 }
             }
         }
@@ -40,7 +40,7 @@ void day6() {
         for(auto a: answer2)
         {
             if(a.second == nGroup)
-                count2 ++;
+                count2++;
         }
     }
 

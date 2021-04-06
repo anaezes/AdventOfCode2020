@@ -3,8 +3,6 @@
 
 #include "days/days.hpp"
 
-using namespace std;
-
 typedef std::map<uint32_t, void(*)()> function;
 function calender = {
         {1, &day1 },
@@ -12,17 +10,18 @@ function calender = {
         {3, &day3 },
         {4, &day4 },
         {5, &day5 },
-        {6, &day6 }
+        {6, &day6 },
+        {7, &day7 }
 };
 
 int main() {
-    cout << "Welcome to Advent of code 2020!" << endl;
+    std::cout << "Welcome to Advent of code 2020!" << std::endl;
 
     while (true)
     {
         int day;
-        cout << "Please insert a day (1-31) or 0 to exit:" << endl;
-        cin  >> day;
+        std::cout << "Please insert a day (1-31) or 0 to exit:" << std::endl;
+        std::cin  >> day;
 
         if (day <= 0)
             break;
@@ -31,9 +30,9 @@ int main() {
         if ( it != calender.end() )
             it->second();
         else
-            cout << "Ops! " << day << " day not found" << endl;
+            std::cout << "Ops! " << day << " day not found" << std::endl;
 
-        cout << "\n-------------------------------------------\n\n";
+        std::cout << "\n-------------------------------------------\n\n";
     }
 
     return 0;

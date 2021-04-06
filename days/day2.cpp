@@ -5,15 +5,13 @@
 #include <regex>
 #include <iostream>
 
-using namespace std;
-
 void day2()
 {
     std::cout << "Day 2 \n";
 
     std::ifstream file_in = utils::getFile("days/inputs/day2.txt");
 
-    string line;
+    std::string line;
     std::vector<std::string> data;
     const std::regex expression("(\\d*)-(\\d*) ([a-z]): (\\w*)");
     while (std::getline(file_in, line)) {
@@ -21,8 +19,8 @@ void day2()
         const std::sregex_iterator end;
         for(std::sregex_iterator i(line.begin(), line.end(), expression); i != end; ++i)
         {
-            string letter = (*i)[3];
-            string str = (*i)[4];
+            std::string letter = (*i)[3];
+            std::string str = (*i)[4];
 
             int ntimes = std::count(str.begin(), str.end(), letter[0]);
 
@@ -41,8 +39,8 @@ void day2()
         const std::sregex_iterator end;
         for(std::sregex_iterator i(line.begin(), line.end(), expression); i != end; ++i)
         {
-            string letter = (*i)[3];
-            string str = (*i)[4];
+            std::string letter = (*i)[3];
+            std::string str = (*i)[4];
 
             int pos1 = stoi((*i)[1]);
             int pos2 = stoi((*i)[2]);

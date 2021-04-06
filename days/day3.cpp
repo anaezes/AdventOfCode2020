@@ -2,9 +2,7 @@
 #include <vector>
 #include <iostream>
 
-using namespace std;
-
-unsigned int countTrees(vector<string> map, unsigned int incrementY, unsigned int incrementX);
+unsigned int countTrees(std::vector<std::string> map, unsigned int incrementY, unsigned int incrementX);
 
 void day3()
 {
@@ -22,7 +20,7 @@ void day3()
     std::cout << "Part Two - " << total << std::endl;
 }
 
-unsigned int countTrees(vector<string> map, unsigned int incrementY, unsigned int incrementX)
+unsigned int countTrees(std::vector<std::string> map, unsigned int incrementY, unsigned int incrementX)
 {
     int down_coordinate = 0;
     int right_coordinate = 0;

@@ -3,8 +3,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 void day1()
 {
     std::cout << "Day 1 \n";

@@ -7,16 +7,14 @@
 #include <algorithm>
 #include <map>
 
-using namespace std;
+const std::vector<std::string> keys = {"byr", "ecl", "eyr", "hcl", "hgt", "iyr", "pid" };
 
-const std::vector<string> keys = {"byr", "ecl", "eyr", "hcl", "hgt", "iyr", "pid" };
-
-std::vector<string> getPassports();
+std::vector<std::string> getPassports();
 
 void day4() {
     std::cout << "Day 4 \n";
 
-    std::vector<string> passports = getPassports();
+    std::vector<std::string> passports = getPassports();
 
     const std::regex expression("([\\w]*:[#a-z0-9])\\w*");
     int validPassportsCount1 = 0;
@@ -25,11 +23,11 @@ void day4() {
     for(auto p: passports) {
         std::smatch result;
         const std::sregex_iterator end;
-        std::vector<string> vecData;
-        std::map<string, string> mapData;
+        std::vector<std::string> vecData;
+        std::map<std::string, std::string> mapData;
         for (std::sregex_iterator i(p.begin(), p.end(), expression); i != end; ++i) {
-            string field = (*i)[0];
-            string key = field.substr(0, (field.find(':')));
+            std::string field = (*i)[0];
+            std::string key = field.substr(0, (field.find(':')));
 
             //part one
             if(key == "cid"){
@@ -38,7 +36,7 @@ void day4() {
             vecData.push_back(key);
 
             //part two
-            string value = field.substr((field.find(':'))+1);
+            std::string value = field.substr((field.find(':'))+1);
             mapData.insert({ key, value });
         }
 
@@ -59,14 +57,14 @@ void day4() {
     std::cout << "Part Two - " << validPassportsCount2 << std::endl;
 }
 
-std::vector<string> getPassports() {
+std::vector<std::string> getPassports() {
     std::ifstream file_in = utils::getFile("days/inputs/day4.txt");
 
-    std::vector<string> passaports;
+    std::vector<std::string> passaports;
     std::string line;
 
     while(std::getline(file_in, line)) {
-        string passaport = line;
+        std::string passaport = line;
         while (std::getline(file_in, line)) {
             if(line.empty() || line[0] == '\n'){
                 break;
