@@ -3,4 +3,4 @@ project(AdventOfCode)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(untitled main.cpp days/day1.cpp days/day2.cpp days/days.hpp days/utils/utils.cpp days/utils/utils.hpp days/day3.cpp days/day4/day4.cpp days/day4/Passport.cpp days/day4/Passport.hpp days/day5.cpp days/day6.cpp days/day7.cpp)
+add_executable(untitled main.cpp days/day1.cpp days/day2.cpp days/days.hpp days/utils/utils.cpp days/utils/utils.hpp days/day3.cpp days/day4/day4.cpp days/day4/Passport.cpp days/day4/Passport.hpp days/day5.cpp days/day6.cpp days/day7.cpp days/day8.cpp)

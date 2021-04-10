@@ -11,7 +11,8 @@ function calender = {
         {4, &day4 },
         {5, &day5 },
         {6, &day6 },
-        {7, &day7 }
+        {7, &day7 },
+        {8, &day8 }
 };
 
 int main() {
